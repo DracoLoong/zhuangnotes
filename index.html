@@ -30,22 +30,37 @@
       cursor: pointer;
     }
 
-        /* 放大按钮的点击区域 */
-    .sidebar-toggle {
-      width: 48px !important;
-      height: 48px !important;
-      padding: 12px !important;
-      box-sizing: border-box;
-      z-index: 100;
-    }
+  /* 左下角汉堡菜单：增大点击区域 */
+  .sidebar-toggle {
+    width: 56px !important;
+    height: 56px !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    z-index: 100 !important;
+  }
 
-    /* 放大汉堡菜单的三条横线 */
-    .sidebar-toggle span {
-      width: 28px !important;
-      height: 3px !important;
-      margin-bottom: 5px !important;
-      border-radius: 2px;
-    }
+  /* 放大汉堡图标的横线 */
+  .sidebar-toggle span {
+    display: block !important;
+    width: 28px !important;
+    height: 3px !important;
+    margin-bottom: 5px !important;
+    border-radius: 2px !important;
+    transform-origin: left center;
+  }
+
+  /* 兼容使用伪元素绘制横线的主题 */
+  .sidebar-toggle span::before,
+  .sidebar-toggle span::after {
+    height: 3px !important;
+    border-radius: 2px !important;
+  }
+
+  /* 防止按钮被其他页面元素遮挡 */
+  .sidebar-toggle,
+  .sidebar-toggle-button {
+    z-index: 100 !important;
+  }
   </style>
 </head>
 
