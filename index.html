@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -12,108 +13,66 @@
     href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
   >
 
-<!-- 独立分类展开逻辑 -->
-<script>
-(function () {
-  'use strict';
+  <style>
+    /* 分类列表的基本样式 */
+    .sidebar-nav li > ul[hidden] {
+      display: none !important;
+    }
 
-  function initSidebar() {
-    var sidebar = document.querySelector('.sidebar-nav');
-    if (!sidebar) return;
+    .sidebar-nav li > ul:not([hidden]) {
+      display: block;
+    }
 
-    sidebar.querySelectorAll('li').forEach(function (li) {
-      // 找到当前分类自己的子列表
-      var childList = Array.from(li.children).find(function (el) {
-        return el.tagName === 'UL' || el.tagName === 'OL';
-      });
+    /* 分类标题和箭头保持在同一行 */
+    .sidebar-nav .category-row {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-width: 0;
+    }
 
-      if (!childList) return;
+    .sidebar-nav .category-row > a {
+      flex: 1;
+      min-width: 0;
+    }
 
-      // 避免重复创建按钮
-      var link = Array.from(li.children).find(function (el) {
-        return el.tagName === 'A';
-      });
+    /* 箭头按钮：压缩上下高度 */
+    .sidebar-nav .category-toggle {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 20px;
+      width: 20px;
+      min-width: 20px;
+      height: 18px !important;
+      min-height: 18px !important;
+      box-sizing: border-box;
+      padding: 0 !important;
+      margin: 0 4px 0 0 !important;
+      border: none;
+      border-radius: 3px;
+      background: transparent;
+      color: inherit;
+      font-size: 10px !important;
+      line-height: 18px !important;
+      vertical-align: middle;
+      cursor: pointer;
+    }
 
-      // Docsify 的分类标题通常是直接子节点中的链接。
-      // 如果链接在其他容器中，则不改动原始 DOM 结构。
-      if (!link) return;
+    .sidebar-nav .category-toggle:hover {
+      color: var(--theme-color, #42b983);
+    }
 
-      var button = Array.from(li.children).find(function (el) {
-        return el.classList &&
-          el.classList.contains('category-toggle');
-      });
+    .sidebar-nav .category-toggle:focus-visible {
+      outline: 2px solid var(--theme-color, #42b983);
+      outline-offset: 1px;
+    }
 
-      if (!button) {
-        button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'category-toggle';
-        button.textContent = '▶';
-        button.setAttribute('aria-label', '展开或收起分类');
-
-        button.style.cssText =
-          'margin-right:6px;border:0;background:transparent;' +
-          'cursor:pointer;color:inherit;padding:4px;';
-
-        li.insertBefore(button, link);
-      }
-
-      // 初始化时保留现有展开状态；
-      // 只在第一次初始化时设置默认状态。
-      if (childList.dataset.independentInit !== '1') {
-        childList.dataset.independentInit = '1';
-
-        var isFirstLevel = li.parentElement === sidebar;
-        childList.hidden = !isFirstLevel;
-      }
-
-      button.setAttribute(
-        'aria-expanded',
-        String(!childList.hidden)
-      );
-
-      if (button.dataset.bound === '1') return;
-      button.dataset.bound = '1';
-
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        // 仅修改当前分类的子列表，不关闭其他分类
-        childList.hidden = !childList.hidden;
-
-        button.setAttribute(
-          'aria-expanded',
-          String(!childList.hidden)
-        );
-
-        button.textContent = childList.hidden ? '▶' : '▼';
-      });
-    });
-  }
-
-  function start() {
-    initSidebar();
-
-    var sidebar = document.querySelector('.sidebar-nav');
-    if (!sidebar) return;
-
-    var observer = new MutationObserver(function () {
-      initSidebar();
-    });
-
-    observer.observe(sidebar, {
-      childList: true,
-      subtree: true
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start);
-  } else {
-    start();
-  }
-})();
-</script>
+    /* 不改变分类文字本身的行高 */
+    .sidebar-nav li.has-independent-toggle {
+      position: relative;
+    }
+  </style>
 </head>
 
 <body>
@@ -129,8 +88,10 @@
       subMaxLevel: 2,
       auto2top: true,
 
-      // 保留原有配置：默认显示第一级分类的内容
+      // 第一级分类默认展开
       sidebarDisplayLevel: 1,
+
+      // 不隐藏其他侧边栏内容
       hideOtherSidebarContent: false,
 
       alias: {
@@ -147,66 +108,53 @@
   <!-- 搜索插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 
-  <!-- 独立分类展开逻辑：不再加载原折叠插件 -->
+  <!-- 分类独立展开逻辑 -->
   <script>
     (function () {
       'use strict';
 
-      var initializedLists = new WeakSet();
+      var observer = null;
 
       function initSidebar() {
         var sidebar = document.querySelector('.sidebar-nav');
-
         if (!sidebar) return;
 
-        var items = sidebar.querySelectorAll('li');
-
-        items.forEach(function (li) {
-          // 只处理直接属于当前分类的子列表
-          var childList = null;
-
-          Array.from(li.children).forEach(function (child) {
-            if (
-              child.tagName === 'UL' ||
-              child.tagName === 'OL'
-            ) {
-              childList = child;
-            }
+        sidebar.querySelectorAll('li').forEach(function (li) {
+          // 找到当前分类直接拥有的子列表
+          var childList = Array.from(li.children).find(function (el) {
+            return el.tagName === 'UL' || el.tagName === 'OL';
           });
 
           if (!childList) return;
 
-          var row = null;
-          var existingRow = Array.from(li.children).find(function (child) {
-            return child.classList &&
-              child.classList.contains('category-row');
+          // 找到分类标题链接
+          var link = Array.from(li.children).find(function (el) {
+            return el.tagName === 'A';
           });
 
-          if (existingRow) {
-            row = existingRow;
-          } else {
-            row = document.createElement('div');
-            row.className = 'category-row';
-
-            // 将分类标题及其链接放入标题行
-            Array.from(li.childNodes).forEach(function (node) {
-              if (
-                node === childList ||
-                (node.nodeType === 1 &&
-                  (node.tagName === 'UL' || node.tagName === 'OL'))
-              ) {
-                return;
-              }
-
-              row.appendChild(node);
-            });
-
-            li.insertBefore(row, childList);
-          }
+          if (!link) return;
 
           li.classList.add('has-independent-toggle');
 
-          var button = row.querySelector('.category-toggle');
+          // 创建标题行，避免重复创建
+          var row = Array.from(li.children).find(function (el) {
+            return el.classList &&
+              el.classList.contains('category-row');
+          });
+
+          if (!row) {
+            row = document.createElement('div');
+            row.className = 'category-row';
+
+            li.insertBefore(row, link);
+            row.appendChild(link);
+          }
+
+          // 创建独立的展开按钮
+          var button = Array.from(row.children).find(function (el) {
+            return el.classList &&
+              el.classList.contains('category-toggle');
+          });
 
           if (!button) {
             button = document.createElement('button');
@@ -214,74 +162,83 @@
             button.className = 'category-toggle';
             button.setAttribute('aria-label', '展开或收起分类');
 
-            var arrow = document.createElement('span');
-            arrow.className = 'arrow';
-            arrow.textContent = '▶';
-            arrow.setAttribute('aria-hidden', 'true');
-
-            button.appendChild(arrow);
             row.insertBefore(button, row.firstChild);
           }
 
-          // 同一个分类只初始化一次，保留用户的展开状态
-          if (!initializedLists.has(childList)) {
-            initializedLists.add(childList);
+          // 只初始化一次，避免每次更新都重置状态
+          if (childList.dataset.independentInit !== '1') {
+            childList.dataset.independentInit = '1';
 
-            // 根级分类默认展开，其余层级默认收起
-            var parentList = li.parentElement;
-            var isRootCategory =
-              parentList &&
-              parentList.classList.contains('sidebar-nav');
-
-            childList.hidden = !isRootCategory;
+            // 第一级分类默认展开，深层分类默认收起
+            var isFirstLevel = li.parentElement === sidebar;
+            childList.hidden = !isFirstLevel;
           }
 
-          button.setAttribute(
-            'aria-expanded',
-            String(!childList.hidden)
-          );
+          function updateButton() {
+            var expanded = !childList.hidden;
 
-          button.onclick = function (event) {
+            button.textContent = expanded ? '▼' : '▶';
+            button.setAttribute('aria-expanded', String(expanded));
+          }
+
+          updateButton();
+
+          // 避免重复绑定事件
+          if (button.dataset.bound === '1') return;
+          button.dataset.bound = '1';
+
+          button.addEventListener('click', function (event) {
             event.preventDefault();
             event.stopPropagation();
 
-            // 只切换当前分类，不操作其他分类
+            // 只切换当前分类，不收起其他分类
             childList.hidden = !childList.hidden;
-
-            button.setAttribute(
-              'aria-expanded',
-              String(!childList.hidden)
-            );
-          };
+            updateButton();
+          });
         });
       }
 
-      // Docsify 会在路由切换、侧边栏更新时重新渲染 DOM。
-      // 监听变化，确保新生成的分类也能独立展开。
-      function startObserver() {
-        if (!document.body) {
-          document.addEventListener(
-            'DOMContentLoaded',
-            startObserver,
-            { once: true }
-          );
-          return;
-        }
+      function start() {
+        initSidebar();
 
-        var observer = new MutationObserver(function () {
+        var sidebar = document.querySelector('.sidebar-nav');
+        if (!sidebar || observer) return;
+
+        observer = new MutationObserver(function () {
           initSidebar();
         });
 
-        observer.observe(document.body, {
+        observer.observe(sidebar, {
           childList: true,
           subtree: true
         });
-
-        initSidebar();
       }
 
-      startObserver();
+      function waitForSidebar() {
+        start();
+
+        if (!document.querySelector('.sidebar-nav')) {
+          var bodyObserver = new MutationObserver(function () {
+            if (document.querySelector('.sidebar-nav')) {
+              bodyObserver.disconnect();
+              start();
+            }
+          });
+
+          bodyObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForSidebar);
+      } else {
+        waitForSidebar();
+      }
     })();
   </script>
 </body>
 </html>
+```
