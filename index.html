@@ -3,44 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <title>Zhuang Notes</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  
-  <!-- 基础主题样式 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  
-  <!-- 使用文件夹样式的 CSS（这个版本原生支持多节点并行展开） -->
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
+
+  <!-- Docsify 主题 -->
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+  >
+
+  <!-- 分类展开按钮样式 -->
+  <style>
+    /* 每个分类的列表独立控制显示 */
+    .sidebar-nav li > ul {
+      display: block;
+    }
+
+    .sidebar-nav li > ul[hidden] {
+      display: none !important;
+    }
+
+    /* 分类行使用弹性布局 */
+    .sidebar-nav li.has-independent-toggle {
+      position: relative;
+    }
+
+    .sidebar-nav li.has-independent-toggle > .category-row {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .sidebar-nav li.has-independent-toggle > .category-row > a,
+    .sidebar-nav li.has-independent-toggle > .category-row > span.category-label {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* 独立展开/收起按钮 */
+    .sidebar-nav .category-toggle {
+      flex: 0 0 24px;
+      width: 24px;
+      min-width: 24px;
+      height: 28px;
+      padding: 0;
+      margin: 0 4px 0 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font-size: 12px;
+      line-height: 28px;
+      text-align: center;
+    }
+
+    .sidebar-nav .category-toggle:hover {
+      color: var(--theme-color, #42b983);
+    }
+
+    .sidebar-nav .category-toggle:focus-visible {
+      outline: 2px solid var(--theme-color, #42b983);
+      outline-offset: 1px;
+    }
+
+    .sidebar-nav .category-toggle .arrow {
+      display: inline-block;
+      transition: transform 0.15s ease;
+    }
+
+    .sidebar-nav .category-toggle[aria-expanded="true"] .arrow {
+      transform: rotate(90deg);
+    }
+
+    /* 让原来的分类链接继续正常显示 */
+    .sidebar-nav li.has-independent-toggle > .category-row > a {
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
   <div id="app">加载中...</div>
-  
+
+  <!-- Docsify 配置 -->
   <script>
     window.$docsify = {
       name: 'Zhuang Notes',
       repo: '',
+
       loadSidebar: true,
       subMaxLevel: 2,
       auto2top: true,
-      
-      // 关键参数：
-      // 1. 设置默认展开层级（1 表示第一级默认展开，但你可以自由收起/展开任何节点，互不影响）
+
+      // 保留原有配置：默认显示第一级分类的内容
       sidebarDisplayLevel: 1,
-      // 2. 禁用自动隐藏其他内容
       hideOtherSidebarContent: false,
-      
+
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
+
       search: 'auto'
-    }
+    };
   </script>
-  
-  <!-- Docsify 核心库与搜索插件 -->
+
+  <!-- Docsify 核心库 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- 搜索插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  
-  <!-- 折叠侧边栏插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
+  <!-- 独立分类展开逻辑：不再加载原折叠插件 -->
+  <script>
+    (function () {
+      'use strict';
+
+      var initializedLists = new WeakSet();
+
+      function initSidebar() {
+        var sidebar = document.querySelector('.sidebar-nav');
+
+        if (!sidebar) return;
+
+        var items = sidebar.querySelectorAll('li');
+
+        items.forEach(function (li) {
+          // 只处理直接属于当前分类的子列表
+          var childList = null;
+
+          Array.from(li.children).forEach(function (child) {
+            if (
+              child.tagName === 'UL' ||
+              child.tagName === 'OL'
+            ) {
+              childList = child;
+            }
+          });
+
+          if (!childList) return;
+
+          var row = null;
+          var existingRow = Array.from(li.children).find(function (child) {
+            return child.classList &&
+              child.classList.contains('category-row');
+          });
+
+          if (existingRow) {
+            row = existingRow;
+          } else {
+            row = document.createElement('div');
+            row.className = 'category-row';
+
+            // 将分类标题及其链接放入标题行
+            Array.from(li.childNodes).forEach(function (node) {
+              if (
+                node === childList ||
+                (node.nodeType === 1 &&
+                  (node.tagName === 'UL' || node.tagName === 'OL'))
+              ) {
+                return;
+              }
+
+              row.appendChild(node);
+            });
+
+            li.insertBefore(row, childList);
+          }
+
+          li.classList.add('has-independent-toggle');
+
+          var button = row.querySelector('.category-toggle');
+
+          if (!button) {
+            button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'category-toggle';
+            button.setAttribute('aria-label', '展开或收起分类');
+
+            var arrow = document.createElement('span');
+            arrow.className = 'arrow';
+            arrow.textContent = '▶';
+            arrow.setAttribute('aria-hidden', 'true');
+
+            button.appendChild(arrow);
+            row.insertBefore(button, row.firstChild);
+          }
+
+          // 同一个分类只初始化一次，保留用户的展开状态
+          if (!initializedLists.has(childList)) {
+            initializedLists.add(childList);
+
+            // 根级分类默认展开，其余层级默认收起
+            var parentList = li.parentElement;
+            var isRootCategory =
+              parentList &&
+              parentList.classList.contains('sidebar-nav');
+
+            childList.hidden = !isRootCategory;
+          }
+
+          button.setAttribute(
+            'aria-expanded',
+            String(!childList.hidden)
+          );
+
+          button.onclick = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // 只切换当前分类，不操作其他分类
+            childList.hidden = !childList.hidden;
+
+            button.setAttribute(
+              'aria-expanded',
+              String(!childList.hidden)
+            );
+          };
+        });
+      }
+
+      // Docsify 会在路由切换、侧边栏更新时重新渲染 DOM。
+      // 监听变化，确保新生成的分类也能独立展开。
+      function startObserver() {
+        if (!document.body) {
+          document.addEventListener(
+            'DOMContentLoaded',
+            startObserver,
+            { once: true }
+          );
+          return;
+        }
+
+        var observer = new MutationObserver(function () {
+          initSidebar();
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+
+        initSidebar();
+      }
+
+      startObserver();
+    })();
+  </script>
 </body>
 </html>
