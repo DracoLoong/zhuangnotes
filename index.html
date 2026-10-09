@@ -6,70 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-  <!-- Docsify 主题 -->
+  <!-- Docsify Vue 主题 -->
   <link
     rel="stylesheet"
     href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
   >
 
+  <!-- Docsify 侧边栏文件夹样式 -->
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css"
+  >
+
+  <!-- 侧边栏样式微调 -->
   <style>
-    /* 分类列表的基本样式 */
-    .sidebar-nav li > ul[hidden] {
-      display: none !important;
+    /* 保留原有侧边栏布局，只调整文件夹箭头的外观 */
+    .sidebar-nav .folder > ul {
+      overflow: hidden;
     }
 
-    .sidebar-nav li > ul:not([hidden]) {
-      display: block;
-    }
-
-    /* 分类标题和箭头保持在同一行 */
-    .sidebar-nav .category-row {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      min-width: 0;
-    }
-
-    .sidebar-nav .category-row > a {
-      flex: 1;
-      min-width: 0;
-    }
-
-    /* 箭头按钮：压缩上下高度 */
-    .sidebar-nav .category-toggle {
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 20px;
-      width: 20px;
-      min-width: 20px;
-      height: 18px !important;
-      min-height: 18px !important;
-      box-sizing: border-box;
-      padding: 0 !important;
-      margin: 0 4px 0 0 !important;
-      border: none;
-      border-radius: 3px;
-      background: transparent;
-      color: inherit;
-      font-size: 10px !important;
-      line-height: 18px !important;
-      vertical-align: middle;
+    .sidebar-nav .folder > a,
+    .sidebar-nav .folder > strong {
       cursor: pointer;
-    }
-
-    .sidebar-nav .category-toggle:hover {
-      color: var(--theme-color, #42b983);
-    }
-
-    .sidebar-nav .category-toggle:focus-visible {
-      outline: 2px solid var(--theme-color, #42b983);
-      outline-offset: 1px;
-    }
-
-    /* 不改变分类文字本身的行高 */
-    .sidebar-nav li.has-independent-toggle {
-      position: relative;
     }
   </style>
 </head>
@@ -87,156 +45,33 @@
       subMaxLevel: 2,
       auto2top: true,
 
-      // 第一级分类默认展开
+      // 侧边栏默认显示第一级分类
       sidebarDisplayLevel: 1,
 
       // 不隐藏其他侧边栏内容
       hideOtherSidebarContent: false,
 
+      // 侧边栏路径配置
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
 
-      search: 'auto'
+      // 搜索功能
+      search: {
+        placeholder: '搜索',
+        noData: '没有找到结果',
+        depth: 6
+      }
     };
   </script>
 
-  <!-- Docsify 核心库 -->
+  <!-- Docsify 核心 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
 
   <!-- 搜索插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
 
-  <!-- 分类独立展开逻辑 -->
-  <script>
-    (function () {
-      'use strict';
-
-      var observer = null;
-
-      function initSidebar() {
-        var sidebar = document.querySelector('.sidebar-nav');
-        if (!sidebar) return;
-
-        sidebar.querySelectorAll('li').forEach(function (li) {
-          // 找到当前分类直接拥有的子列表
-          var childList = Array.from(li.children).find(function (el) {
-            return el.tagName === 'UL' || el.tagName === 'OL';
-          });
-
-          if (!childList) return;
-
-          // 找到分类标题链接
-          var link = Array.from(li.children).find(function (el) {
-            return el.tagName === 'A';
-          });
-
-          if (!link) return;
-
-          li.classList.add('has-independent-toggle');
-
-          // 创建标题行，避免重复创建
-          var row = Array.from(li.children).find(function (el) {
-            return el.classList &&
-              el.classList.contains('category-row');
-          });
-
-          if (!row) {
-            row = document.createElement('div');
-            row.className = 'category-row';
-
-            li.insertBefore(row, link);
-            row.appendChild(link);
-          }
-
-          // 创建独立的展开按钮
-          var button = Array.from(row.children).find(function (el) {
-            return el.classList &&
-              el.classList.contains('category-toggle');
-          });
-
-          if (!button) {
-            button = document.createElement('button');
-            button.type = 'button';
-            button.className = 'category-toggle';
-            button.setAttribute('aria-label', '展开或收起分类');
-
-            row.insertBefore(button, row.firstChild);
-          }
-
-          // 只初始化一次，避免每次更新都重置状态
-          if (childList.dataset.independentInit !== '1') {
-            childList.dataset.independentInit = '1';
-
-            // 第一级分类默认展开，深层分类默认收起
-            var isFirstLevel = li.parentElement === sidebar;
-            childList.hidden = !isFirstLevel;
-          }
-
-          function updateButton() {
-            var expanded = !childList.hidden;
-
-            button.textContent = expanded ? '▼' : '▶';
-            button.setAttribute('aria-expanded', String(expanded));
-          }
-
-          updateButton();
-
-          // 避免重复绑定事件
-          if (button.dataset.bound === '1') return;
-          button.dataset.bound = '1';
-
-          button.addEventListener('click', function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            // 只切换当前分类，不收起其他分类
-            childList.hidden = !childList.hidden;
-            updateButton();
-          });
-        });
-      }
-
-      function start() {
-        initSidebar();
-
-        var sidebar = document.querySelector('.sidebar-nav');
-        if (!sidebar || observer) return;
-
-        observer = new MutationObserver(function () {
-          initSidebar();
-        });
-
-        observer.observe(sidebar, {
-          childList: true,
-          subtree: true
-        });
-      }
-
-      function waitForSidebar() {
-        start();
-
-        if (!document.querySelector('.sidebar-nav')) {
-          var bodyObserver = new MutationObserver(function () {
-            if (document.querySelector('.sidebar-nav')) {
-              bodyObserver.disconnect();
-              start();
-            }
-          });
-
-          bodyObserver.observe(document.body, {
-            childList: true,
-            subtree: true
-          });
-        }
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', waitForSidebar);
-      } else {
-        waitForSidebar();
-      }
-    })();
-  </script>
+  <!-- 侧边栏折叠插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>
