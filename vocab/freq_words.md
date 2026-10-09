@@ -104,7 +104,7 @@
 
 ### 1. 天气与自然地理
 * **mbwn** : 〈名〉 天；天空；天气
-* **biengz** / **seiqqyaiq** : 〈名〉 天下；世界
+* **biengz** / **seiqgyaiq** : 〈名〉 天下；世界
 * **daengngoenz** : 〈名〉 太阳
 * **ronghndwen** : 〈名〉 月亮
 * **fwj** : 〈名〉 云
