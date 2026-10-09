@@ -12,74 +12,108 @@
     href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
   >
 
-  <!-- 分类展开按钮样式 -->
-  <style>
-    /* 每个分类的列表独立控制显示 */
-    .sidebar-nav li > ul {
-      display: block;
-    }
+<!-- 独立分类展开逻辑 -->
+<script>
+(function () {
+  'use strict';
 
-    .sidebar-nav li > ul[hidden] {
-      display: none !important;
-    }
+  function initSidebar() {
+    var sidebar = document.querySelector('.sidebar-nav');
+    if (!sidebar) return;
 
-    /* 分类行使用弹性布局 */
-    .sidebar-nav li.has-independent-toggle {
-      position: relative;
-    }
+    sidebar.querySelectorAll('li').forEach(function (li) {
+      // 找到当前分类自己的子列表
+      var childList = Array.from(li.children).find(function (el) {
+        return el.tagName === 'UL' || el.tagName === 'OL';
+      });
 
-    .sidebar-nav li.has-independent-toggle > .category-row {
-      display: flex;
-      align-items: flex-start;
-      width: 100%;
-    }
+      if (!childList) return;
 
-    .sidebar-nav li.has-independent-toggle > .category-row > a,
-    .sidebar-nav li.has-independent-toggle > .category-row > span.category-label {
-      flex: 1;
-      min-width: 0;
-    }
+      // 避免重复创建按钮
+      var link = Array.from(li.children).find(function (el) {
+        return el.tagName === 'A';
+      });
 
-    /* 独立展开/收起按钮 */
-    .sidebar-nav .category-toggle {
-      flex: 0 0 24px;
-      width: 24px;
-      min-width: 24px;
-      height: 28px;
-      padding: 0;
-      margin: 0 4px 0 0;
-      border: 0;
-      background: transparent;
-      color: inherit;
-      cursor: pointer;
-      font-size: 12px;
-      line-height: 28px;
-      text-align: center;
-    }
+      // Docsify 的分类标题通常是直接子节点中的链接。
+      // 如果链接在其他容器中，则不改动原始 DOM 结构。
+      if (!link) return;
 
-    .sidebar-nav .category-toggle:hover {
-      color: var(--theme-color, #42b983);
-    }
+      var button = Array.from(li.children).find(function (el) {
+        return el.classList &&
+          el.classList.contains('category-toggle');
+      });
 
-    .sidebar-nav .category-toggle:focus-visible {
-      outline: 2px solid var(--theme-color, #42b983);
-      outline-offset: 1px;
-    }
+      if (!button) {
+        button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'category-toggle';
+        button.textContent = '▶';
+        button.setAttribute('aria-label', '展开或收起分类');
 
-    .sidebar-nav .category-toggle .arrow {
-      display: inline-block;
-      transition: transform 0.15s ease;
-    }
+        button.style.cssText =
+          'margin-right:6px;border:0;background:transparent;' +
+          'cursor:pointer;color:inherit;padding:4px;';
 
-    .sidebar-nav .category-toggle[aria-expanded="true"] .arrow {
-      transform: rotate(90deg);
-    }
+        li.insertBefore(button, link);
+      }
 
-    /* 让原来的分类链接继续正常显示 */
-    .sidebar-nav li.has-independent-toggle > .category-row > a {
-      display: block;
-    }
-  </style>
+      // 初始化时保留现有展开状态；
+      // 只在第一次初始化时设置默认状态。
+      if (childList.dataset.independentInit !== '1') {
+        childList.dataset.independentInit = '1';
+
+        var isFirstLevel = li.parentElement === sidebar;
+        childList.hidden = !isFirstLevel;
+      }
+
+      button.setAttribute(
+        'aria-expanded',
+        String(!childList.hidden)
+      );
+
+      if (button.dataset.bound === '1') return;
+      button.dataset.bound = '1';
+
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // 仅修改当前分类的子列表，不关闭其他分类
+        childList.hidden = !childList.hidden;
+
+        button.setAttribute(
+          'aria-expanded',
+          String(!childList.hidden)
+        );
+
+        button.textContent = childList.hidden ? '▶' : '▼';
+      });
+    });
+  }
+
+  function start() {
+    initSidebar();
+
+    var sidebar = document.querySelector('.sidebar-nav');
+    if (!sidebar) return;
+
+    var observer = new MutationObserver(function () {
+      initSidebar();
+    });
+
+    observer.observe(sidebar, {
+      childList: true,
+      subtree: true
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>
 </head>
 
 <body>
