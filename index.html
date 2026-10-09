@@ -8,8 +8,9 @@
   
   <!-- 基础主题样式 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <!-- 折叠样式 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  
+  <!-- 使用文件夹样式的 CSS（这个版本原生支持多节点并行展开） -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
 </head>
 <body>
   <div id="app">加载中...</div>
@@ -22,7 +23,10 @@
       subMaxLevel: 2,
       auto2top: true,
       
-      // 允许同时展开多个节点（非互斥手风琴模式）
+      // 关键参数：
+      // 1. 设置默认展开层级（1 表示第一级默认展开，但你可以自由收起/展开任何节点，互不影响）
+      sidebarDisplayLevel: 1,
+      // 2. 禁用自动隐藏其他内容
       hideOtherSidebarContent: false,
       
       alias: {
