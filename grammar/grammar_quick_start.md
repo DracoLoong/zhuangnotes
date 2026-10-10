@@ -123,3 +123,5 @@ Sam duz meuz ndaem iq baihdoeng Nanzningz gou haengj neix gaemh nou. （这三�
 ## 改变句意——否定和疑问
 
 ## 表示方式、时间和地点——其他状语
+
+## 消除歧义——表达方式与结构的选择
