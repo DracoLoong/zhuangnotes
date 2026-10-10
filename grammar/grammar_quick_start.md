@@ -70,6 +70,7 @@
 
 Sam duz meuz ndaem iq baihdoeng Nanzningz gou haengj neix gaemh nou. （这三只我所喜欢的南宁东部的小黑猫抓老鼠）
 
+## 更好地描述——修饰动词和形容词，以及比较结构
 
 ## 动作的过程和状态——动词的体
 
@@ -116,8 +117,6 @@ Sam duz meuz ndaem iq baihdoeng Nanzningz gou haengj neix gaemh nou. （这三�
   	 - Sousib yaepndeu ran mwngz. （收拾一下你的房间）
 
 ## 重塑事件的过程与角色——致使、被动和相互结构
-
-## 更好地描述——修饰动词和形容词，以及比较结构
 
 ## 改变句意——否定和疑问
 
