@@ -20,7 +20,7 @@
   - ｛量词 + 猫 + 小｝
 - Duz meuz neix. （这只猫）
   - ｛量词 + 猫 + 这｝
- - Duz meuz iq neix.  （这只小猫）
+- Duz meuz iq neix.  （这只小猫）
   - ｛量词 + 猫 + 小 + 这｝
 - Sam duz meuz iq neix.  （这三只小猫）
   - ｛三 + 量词 + 猫 + 小 + 这｝
