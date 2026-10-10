@@ -78,8 +78,15 @@
  - 持续体（动作正在发生）
    - 使用 cingq，置于动词前
      - cingq naengh daengq （正坐着凳子）
-   - 使用 dwk，置于句末
+   - 使用 dwk，置于动词或者动宾短语之后
      - naengh daengq dwk （正坐着凳子）
+
+ - 起始体（表示动作的开始）
+   - 使用 hwnjdaeuj，置于动词或动宾短语后
+     - De byaij hwnjdaeuj lumj duz lingz. （他走起来像头熊。）
+     - Mbwn laep le, de lau hwnjdaeuj. （天黑了，他害怕起来）
+   - 使用 haicij，置于动词前
+     -Mbwn laep le, de haicij lau. （天黑了，他开始害怕。）
 
  - 尝试体
    - 使用 动词的重叠形式，来表示短暂的尝试
