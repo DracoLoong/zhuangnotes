@@ -74,6 +74,13 @@
  - 经历体（动作发生过）
    - 使用 gvaq，表示动作、行为、发展变化已成过去 。一般放在末端 ，也可放在动词后。
      - Dingq gienh saeh neix gvaq. （听说过这件事）
+
+ - 持续体（动作正在发生）
+   - 使用 cingq，置于动词前
+     - cingq naengh daengq （正坐着凳子）
+   - 使用 dwk，置于句末
+     - naengh daengq dwk （正坐着凳子）
+
  - 尝试体
    - 使用 动词的重叠形式，来表示短暂的尝试
      - yawjyawj （看一看）
@@ -81,6 +88,7 @@
    - 也可使用 动词重叠式 + yawj
      - cimzcimz yawj （尝尝看）
 	 - ciengqciengq yawj （唱一唱）
+
  - 短时体
    - 使用 yaep 或者 yaepndeu，表示短暂或随意的动作
      - Ra dieg naengh yaep. （找地方坐一下）
