@@ -1,4 +1,4 @@
-# 语法快速入门 RIENGJ HAG YIJFAZ
+# 壮语语法快速入门 RIENGJ HAG VAHCUENGH YIJFAZ
 
 本文旨在帮助读者快速了解壮语的语法结构，并掌握基本的造句方法，而不必纠缠于琐碎的语法细节。虽然本文并未提供完整、系统的语法框架，但具备基础汉语语法知识的读者仍可轻松入门。
 
@@ -125,3 +125,5 @@ Sam duz meuz ndaem iq baihdoeng Nanzningz gou haengj neix gaemh nou. （这三�
 ## 表示方式、时间和地点——其他状语
 
 ## 消除歧义——表达方式与结构的选择
+
+## 飘忽不定的语序——汉语语法的渗透、借用和杂糅
