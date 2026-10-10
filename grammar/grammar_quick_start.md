@@ -59,7 +59,32 @@
 
 ## 构造完整的句子——作谓语的动词和形容词
 
-## 动作的时间和情状——动词的体和貌
+## 动作的时间和情状——动词的体
+
+ - 完整体（动作已完成）
+   - 表示动作行为的完成 ，使用 liux、 bae、ndaej。liux放在动词后面或者句末，bae、ndaej放在动词之后。
+     - Gwn liux haeux. = Gwn haeux liux. （吃完饭）
+     - Sik bae song mbaw ceij. （撕了两张纸。）
+     - Doeg ndaej song bi saw. （读了两年书。）
+
+- 完成体（动作发生并影响现在）
+  - 表示动作行为的完成 ，并对现在有影响，使用  le 和 lo 。le 用于动词后，lo 用于句末。
+    - De bae Yiednamz lo. （他去越南了。）
+ 
+ - 经历体（动作发生过）
+   - 使用 gvaq，表示动作、行为、发展变化已成过去 。一般放在末端 ，也可放在动词后。
+     - Dingq gienh saeh neix gvaq. （听说过这件事）
+ - 尝试体
+   - 使用 动词的重叠形式，来表示短暂的尝试
+     - yawjyawj （看一看）
+	 - camcam （问一问）
+   - 也可使用 动词重叠式 + yawj
+     - cimzcimz yawj （尝尝看）
+	 - ciengqciengq yawj （唱一唱）
+ - 短时体
+   - 使用 yaep 或者 yaepndeu，表示短暂或随意的动作
+     - Ra dieg naengh yaep. （找地方坐一下）
+  	 - Sousib yaepndeu ran mwngz. （收拾一下你的房间）
 
 ## 重塑事件的过程与角色——致使、被动和相互结构
 
