@@ -27,7 +27,7 @@
 
 按照词的意义，词和词的结合关系，以及词在句子中的作用，僮语的词可分为以下十类。
 
-1.名词——表示人、物、地、方位、处所、时间、组织、制度、思想意识等名称的词，叫做名词。如：**meh** 母亲，**manaex** 狼，**caw** 珍珠，**mbanj** 村，**ciengz** 墙，**gwnz** 上，**laj** 下，**ndaw** 内，**rog** 外，**giz** 处所，**ngoenz** 天，**ndwen** 月，**mwh** 时候，**hozcozse** 合作社，**gungcanjdangj** 共产党，**seveicujyi** 社会主义，**simgei** 心机。
+1、 名词——表示人、物、地、方位、处所、时间、组织、制度、思想意识等名称的词，叫做名词。如：**meh** 母亲，**manaex** 狼，**caw** 珍珠，**mbanj** 村，**ciengz** 墙，**gwnz** 上，**laj** 下，**ndaw** 内，**rog** 外，**giz** 处所，**ngoenz** 天，**ndwen** 月，**mwh** 时候，**hozcozse** 合作社，**gungcanjdangj** 共产党，**seveicujyi** 社会主义，**simgei** 心机。
 
 表示事物名称的名词前面一般可以冠上一个与它相适应的量词。如：**duz manaez** 狼，**aen caw** 珍珠，**go faex** 树。名词除了极少数能作量词用的单音词（如：**mbanjmbanj** 每一村，**ranzranz** 每一家）和两个意义、性属相近的单音名词词组（如：**bitbit gaeqgaeq** 鸡鸡鸭鸭）外，一般不能重叠；名词可以担任修饰语和修饰语的中心词。
 
@@ -37,7 +37,7 @@
 
 表示时间的名词，如：**mwh / seiz** 时间，**ngoenz** 天，**ndwen** 月，**bi** 年，**ngoenzcog** 明天，**ndwenlab** 腊月，**bigvaq** 去年，**bineix** 今年，**ndwenneix** 本月，**ngoenzneix** 今天，**seizneix** 现在，**haetneix** 今早……。其中单音词能重叠，表示每一和经常的意思。如：**bibi** 每一年，**ngoenzngoenz** 每一天。能被修饰，但不能担任修饰语。如：**ngoenz haenx** 那天，**song bi neix** 这两年。合成词不能重叠，在句子中只能担任修饰语，不能被修饰。如：**haeux bigvaq** 去年的谷子，**bigvaq bae** 去年去。
 
-2.量词——表示事物类别和数量单位的词，叫做量词。量词可分为名量词和动量词两种：
+2、 量词——表示事物类别和数量单位的词，叫做量词。量词可分为名量词和动量词两种：
 
 名量词，如：**song boux vunz** 两个人，**haj duz ma** 五只狗，**seiq leix roen** 四里路，**song gaen haeux** 两斤米，**haj cik baengz** 五尺布，**caet go faex** 七棵树，**sam aen ranz** 三间房子，**bet moux naz** 八亩田，等。
 
@@ -46,14 +46,24 @@
 名量词可以直接为指代词、动词、形容词所修饰。如：**Aen daiz neix dwg aen bouxlawz? Aen vunz.** 这张桌子是谁的？别人的。**Bonj saw neix bonj bouxlawz? Bonj gou.** 这本书是谁？我的。**duz neix** 这一只，**go sang** 高的（那）棵，**duz ninz** 睡的（那）只。
 
 在下列情况下，量词必须与名词结合使用：
+
 ① 当名词带有数词时。如：
 **Ndaw ndoeng miz duz guk ndeu.**
 森林里有一隻老虎。
 **Laj daiz haenx dingqlingz miz song sam duz ma.**
 那桌子下面恰巧有两三隻狗。
+
 ②当名词带有指示词时。如：
 **Gyoengq vunz ndaw mbanj haenx cam de.**
 村里的那些人问他。
 **Boux lwgnyez daih sam haenx lij youq ndaw ndang.**
 那第三个孩子还在肚子里。
+
+动量词。如：**haeb song gaemz** 咬两口，**dik sam mbat** 踢三次，**byaij bae ndeu** 走一趟，等，这些词可以重叠；可以担任动词的修饰语。如：**mbatmbat cungj raen mwngz** 每一次都看见你，**bae yawj** 一看。
+
+3、 数词——表示数目和次第的词，叫做数词。表示数目的词是基数词。如：**boux vunz ndeu** 一个人，**song duz roeg** 两只鸟，**haj bonj saw** 五本书，**roek gonj bit** 六枝笔。表示次第的词叫做序数词。如：**boux daih'it** 第一个人，**ranz daihngeih** 第二间房子。表示约数的词叫做约数词。如：**saek song boux vunz** 大约两个人，**doengh go faex neix** 这些树，**geij duz gaeq** 几只鸡，**geijlai vunz** 多少人，**mbangj boux naeuz** 有些人说，等。
+
+
+
+4、 
 
