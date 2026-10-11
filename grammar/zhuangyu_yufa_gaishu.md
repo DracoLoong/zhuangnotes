@@ -159,3 +159,12 @@
 - ① **youh sang youh hung** 又高又大
 - ② **nding raixcaix** 很红
 
+词组不等于合成词，因为它不止表达一个简单的意思，而是由两个以上的词结合成的语言片断。在词组中，词的结合是比较自由，比较不固定的；在意义上，各个词之间的关系也不如合成词各成分之间意义结合的那样紧密。试比较下表的几个例子：
+
+| 词组 | 合成词 |
+| :--- | :--- |
+| **Gou gwn haeux ndat.**<br>我吃热的饭。 | **Mwngz gaej hozdat lai.**<br>你不要老生气。 |
+| **Gou ngoenzneix bae guh hek.**<br>我今天去做客。 | **Mwngz gaejyungh guhhek lai.**<br>你不用太客气。 |
+| **Din fwngz cungj naet leu.**<br>手脚都累了。 | **Dah neix dinfwngz ndei.**<br>这位姑娘手艺好。 |
+
+词组不是句子，因为它不能表达一个完整的意思，而是作为句子里的一个成分，相当于一个词的作用。如：**boux lwgnyez neix biz lai.** 这个句子中的 **boux lwgnyez neix** 实际上只等于一个名词或一个代词，用作句子的主语。
