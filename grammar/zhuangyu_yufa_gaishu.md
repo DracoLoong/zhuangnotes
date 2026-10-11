@@ -45,3 +45,15 @@
 
 名量词可以直接为指代词、动词、形容词所修饰。如：**Aen daiz neix dwg aen bouxlawz? Aen vunz.** 这张桌子是谁的？别人的。**Bonj saw neix bonj bouxlawz? Bonj gou.** 这本书是谁？我的。**duz neix** 这一只，**go sang** 高的（那）棵，**duz ninz** 睡的（那）只。
 
+在下列情况下，量词必须与名词结合使用：
+① 当名词带有数词时。如：
+**Ndaw ndoeng miz duz guk ndeu.**
+森林里有一隻老虎。
+**Laj daiz haenx dingqlingz miz song sam duz ma.**
+那桌子下面恰巧有两三隻狗。
+②当名词带有指示词时。如：
+**Gyoengq vunz ndaw mbanj haenx cam de.**
+村里的那些人问他。
+**Boux lwgnyez daih sam haenx lij youq ndaw ndang.**
+那第三个孩子还在肚子里。
+
