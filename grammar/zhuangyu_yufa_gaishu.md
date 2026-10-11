@@ -92,3 +92,14 @@
 - ⑦ **Youq ranz guh hong.** 在家做工。
 - ⑧ **Daj Namzningz daeuj.** 从南宁来。
 - ⑨ **Lienz haeux cungj mbouj gwn.** 连饭都不吃。
+
+6、 形容词——表示性质、状态的词，叫做形容词。如：**ndei** 好，**yak** 凶恶，**hung** 大，**iq** 小，**ndaem** 黑，**hau** 白等。
+
+形容词都能独立作谓语，作名词、量词的修饰语，作动词的修饰语和补语，除了被付词修饰外，通常不被其他的词修饰。
+
+形容词中的单音词后面一般可以加上一个或两个描写性质、状态的音节。如：**bizbwd** 胖胖的，**ndongqiklik** 亮晶晶的，**hausaksak** 白白的，**ndaemndatndat** 黑黑的。
+
+单音的形容词一般能重叠，后面加 **bae** ，如：**imim bae** 饱饱的。
+
+7、 副词——修饰、限制动词、形容词或付词的词。如：**cingq** 正在，**dahraix** 真的，**gonq** 先，**aegwj** 尽管，**couhcinj** 即使，**cix** 就，**caemh** 也，**lij** 还，**cungj** 总、都，**gujleix** 仍然，**mbouj** 不，**gaej** 别、不要，**gaejbah** 暂不，**raixcaix** 非常，**dangqmaz** 无比，等。
+
