@@ -69,4 +69,26 @@
 
 这类词在句子中可以独立运用，但不能被别的词修饰。
 
-指示词是区别指示名词和量词的词。如：**neix** 这，**haenx** 那。这类词的主要功能是放在量词或专有名词以外而具有名量词作用的名词后面，
+指示词是区别指示名词和量词的词。如：**neix** 这，**haenx** 那。这类词的主要功能是放在量词或专有名词以外而具有名量词作用的名词后面，起区别指示作用。如：**mbanj neix** 这条村，**dah neix** 这位姑娘，**duz ma haenx** 那条狗。
+
+5、 动词——表示动作行为、发展、变化、存在和判断的意思的词，叫做动词。如：
+- 表示行为的：**guh** 做，**gwn** 吃，**ngeix** 思考，**doxmoeb** 打架，**dajcaemx** 洗澡。
+- 表示发展、变化的：**lix** 活，**dai** 死，**bienq** 变，**maj** 长大。
+- 表示存在的：**miz** 有，**youq** 在。
+- 表示判断的：**dwg** 是，**heuhguh** 叫做，**gvihaeuj** 属于，**dang** 当，**guh** 做，等。
+
+表示动作行为的单音动词一般可以重叠，可以在后面加 **yawj** 表示尝试和短暂的意思。如：**byaijbyaij yawj** 走走看，**guhguh yawj** 做做看；可以加一两个描写行为状态的附加音节。如：**gwngak** 索性吃掉，**guhgak** 索性做，**byaijbawq** 快走吧，**riunyumjnyumj** 笑吟吟。动词的功能一般能独立担任谓语，能作名词和量词的修饰语，也能被动量词、付词、形容词所修饰。
+
+〔副动词〕
+
+还有一小类动词，通常不独立作谓语，往往放在句子里面，表示动作的趋向、情貌、方式、方位等，这叫做副动词。如：
+
+- ① **Yiengq hozcozse ciq cienz.** 向合作社借钱。
+- ② **Byaij bae coh mwngz.** 走到你那里去。
+- ③ **Gwn haeuxcaeux leux.** 吃了晚饭。
+- ④ **Bae ra de gvaq.** 去找过他。
+- ⑤ **Mbouj miz ci ha? Byaij aeu lo!** 没有车么？走算了吧！
+- ⑥ **De deng hoenx.** 他被打。
+- ⑦ **Youq ranz guh hong.** 在家做工。
+- ⑧ **Daj Namzningz daeuj.** 从南宁来。
+- ⑨ **Lienz haeux cungj mbouj gwn.** 连饭都不吃。
