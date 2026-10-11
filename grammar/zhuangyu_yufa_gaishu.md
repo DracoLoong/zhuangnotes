@@ -63,7 +63,8 @@
 
 3、 数词——表示数目和次第的词，叫做数词。表示数目的词是基数词。如：**boux vunz ndeu** 一个人，**song duz roeg** 两只鸟，**haj bonj saw** 五本书，**roek gonj bit** 六枝笔。表示次第的词叫做序数词。如：**boux daih'it** 第一个人，**ranz daihngeih** 第二间房子。表示约数的词叫做约数词。如：**saek song boux vunz** 大约两个人，**doengh go faex neix** 这些树，**geij duz gaeq** 几只鸡，**geijlai vunz** 多少人，**mbangj boux naeuz** 有些人说，等。
 
+基数词和约数词的功能是与量词结合，作为名词的数量修饰语。序数词要加词头 **daih**，（亲属名称的序数词，一般不用词头。）放在量词或名词后面，作次序修饰语。如：**mbanj daih'it** 第一个村庄，**boux daihngeih** 第二个人，**Dah ngeih** 二姑娘，**lungz sam** 三伯父。
 
+4、 指代词——指代词又分为代词和指示词两小类。代词是代替名词、形容词和动词的词。如：**gou** 我，**mwngz** 你，**de** 他，**raeuz** 咱们，**dou** 我们，**sou** 你们，**gyoengqde** 他们，**bouxlawz** 谁，**gag** 自己，**gijmaz** 什么，**baenlawz** 怎么样，**baenzneix** 这样，**baenzhaenx** 那样，**lawz** 哪，**gizlawz** 哪儿。
 
-4、 
 
