@@ -106,3 +106,42 @@
 副词不能重叠；不能同名词直接结合，在任何情况下都不能作主语、宾语、谓语、补语。
 
 8、 连词——把词、词组或句子连接起来，使他们发生一定关系的词，叫做连词。这些词在句子中只能起连接作用，不能起修饰作用，也不能独立使用。如：
+
+- ① **Gou caeuq mwngz bae haw.** 我和你赶圩。
+- ② **Bi doek bi.** 一年又一年。
+- ③ **De doq daej doq naeuz.** 他一面哭一面说。
+- ④ **De ma ranz le, baenzneix couh haeuj ndaw rug bae.** 他回了家，于是，就进房里去。
+- ⑤ **Dahsam youh baenzsau youh miz rengz.** 三姑娘又漂亮又有力气。
+- ⑦ **Mwngz youq gizlawz cix okdaeuj, mboujmiz gou baema lo.** 你在哪里你就出来，否则我就回去了。
+- ⑧ **De mbouj daeuj heuh, digah gou mbouj bae.** 他不来喊，所以我不去。
+
+9、 感叹词——表示感叹的声音的词，叫做感叹词。**eija** 哎呀，**yu** 唷，**ha** 啊。
+
+10、 语气词——放在句子后面，表示整个句子语气的词，叫做语气词。如：**vei，lo** 表示肯定语气；**ma** 或 **lwi** 是表示疑问语气或反诘语气；**nw** 是表示嘱咐语气；**leu** 是表示完成语气，等。
+
+**三 词组**
+
+词与词按照一定方式结合起来，造成一个语言片断，共同表达一个比较复杂的意思，叫做词组。
+
+词组按照它的结合方式分为下面几种：
+
+1.联合词组——两个或两个以上的词结合起来，处于联合地位，不分主从的。如：
+- ① **boh meh lwg yah.** 父、母、妻、子。
+- ② **gou caeuq mwngz.** 我和你。
+- ③ **doq byaij doq riu.** 一面走一面笑。
+- ④ **youh sang youh hung.** 又高又大。
+
+2.主从词组——两个或两个以上的词结合起来，其中有的处于主要地位，其余的处于从属地位。如：
+- ① **song boux lwgnyez neix** 这两个小孩子
+- ② **ranz moq** 新房子
+- ③ **byaij gvaqdaeuj** 走过来
+- ④ **nding raixcaix** 很红
+
+3.动宾词组——动词和它的宾语构成的词组，叫做动宾词组。如：
+- ① **rap raemx** 挑水
+- ② **rox de ngoenzlwenz daeuj** 知道他昨天来
+- ③ **gyaez boh meh** 爱父母
+- ④ **raemj faex** 砍树
+
+
+
