@@ -143,5 +143,19 @@
 - ③ **gyaez boh meh** 爱父母
 - ④ **raemj faex** 砍树
 
+以上几种词组，按其性质可分为以下三种：
 
+1.名词性词组。如：
+- ① **boh meh lwg yah.** 父、母、妻、子。
+- ② **song boux lwgnyez** 两个小孩子
+- ③ **bonj saw neix** 这本书
+
+2.动词性词组。如：
+- ① **doq byaij doq riu** 一面走一面笑
+- ② **byaij gvaqdaeuj** 走过来
+- ③ **gwn imq** 吃饱
+
+3.形容词性词组。如：
+- ① **youh sang youh hung** 又高又大
+- ② **nding raixcaix** 很红
 
