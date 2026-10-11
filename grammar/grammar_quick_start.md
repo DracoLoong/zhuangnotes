@@ -105,7 +105,7 @@ Sam duz meuz ndaem iq baihdoeng Nanzningz gou haengj neix gaemh nou. （这三�
 
  - 起始体（表示动作的开始）
    - 使用 hwnjdaeuj，置于动词或动宾短语后
-     - De byaij hwnjdaeuj lumj duz lingz. （他走起来像头熊。）
+     - De byaij hwnjdaeuj lumj duz lingz. （他走起来像只猴。）
      - Mbwn laep le, de lau hwnjdaeuj. （天黑了，他害怕起来）
    - 使用 haicij，置于动词前
      -Mbwn laep le, de haicij lau. （天黑了，他开始害怕。）
